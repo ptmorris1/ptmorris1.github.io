@@ -2,7 +2,7 @@
 title: About Me
 layout: post
 date: 2025-05-18
-categories: [about]
+categories: []
 tags: []
 icon: fas fa-info-circle
 ---
