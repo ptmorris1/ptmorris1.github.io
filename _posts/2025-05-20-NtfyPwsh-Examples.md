@@ -6,10 +6,9 @@ tags: [powershell,windows,ntfy,ntfypwsh]
 ---
 
 # NtfyPwsh TMI edition!
+<img src="/assets/imgs/ntfy.png" alt="ntfy icon" style="height:48px;vertical-align:middle;">
 
 # Full examples with explanations for the NtfyPwsh module.
-
-<img src="/assets/imgs/ntfy.png" alt="ntfy icon" style="height:48px;vertical-align:middle;">
 
 # 📬 Send-NtfyMessage Cmdlet Overview
 
