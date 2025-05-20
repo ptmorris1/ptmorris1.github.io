@@ -36,7 +36,7 @@ The `Send-NtfyMessage` cmdlet is the primary way to send notifications using the
 - `-TokenCreds` (PSCredential): PowerShell credential for API token authentication.
 - `-URI` (String): Custom ntfy server URL (defaults to https://ntfy.sh).
 
-> ℹ️ For a full parameter mapping, see the table at the end of this document.
+> ℹ️ For a full parameter mapping, see the [Parameter Mapping Table](#-parameter-mapping-table).
 
 ## 📨 Publish a Basic Notification.
 
