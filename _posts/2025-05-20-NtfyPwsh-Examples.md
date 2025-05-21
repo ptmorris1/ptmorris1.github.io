@@ -207,7 +207,7 @@ You can use the `Build-NtfyAction` cmdlet to construct action button definitions
 - `-Intent` (String, broadcast only): Optional intent for broadcast actions (Android only).
 - `-Extras` (Hashtable, broadcast only): Optional extras for broadcast actions (Android only).
 
-### Example: [View Action](https://docs.ntfy.sh/publish/#open-websiteapp)
+### [View Action](https://docs.ntfy.sh/publish/#open-websiteapp)
 ```powershell
 $action = Build-NtfyAction -ActionView -Label 'Open Website' -URL 'https://ntfy.sh'
 $ntfy = @{
@@ -219,7 +219,7 @@ $ntfy = @{
 Send-NtfyMessage @ntfy
 ```
 
-### Example: [HTTP Action](https://docs.ntfy.sh/publish/#send-http-request)
+### [HTTP Action](https://docs.ntfy.sh/publish/#send-http-request)
 ```powershell
 $http = @{
     ActionHttp = $true
@@ -240,7 +240,7 @@ $ntfy = @{
 Send-NtfyMessage @ntfy
 ```
 
-### Example: [Broadcast Action](https://docs.ntfy.sh/publish/#send-android-broadcast) (Android only)
+### [Broadcast Action](https://docs.ntfy.sh/publish/#send-android-broadcast) (Android only)
 ```powershell
 $broadcast = @{
     ActionBroadcast = $true
@@ -311,7 +311,7 @@ Send-NtfyMessage @ntfy
 
 > 📖 **Further reading:** [ntfy documentation – Attach File from a URL](https://docs.ntfy.sh/publish/#attach-file-from-a-url)
 
-## 🖼️ Icon Example
+## 🖼️ Icon Example (Android only)
 
 You can specify an icon for your notification using the `-Icon` parameter. The icon can be a URL to a PNG/JPEG image or an emoji (`Android only`). For example:
 
