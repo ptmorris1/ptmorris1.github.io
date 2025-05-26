@@ -10,7 +10,7 @@ tags: [powershell,windows,ntfy,ntfypwsh]
 
 # Full examples with explanations for the NtfyPwsh module.
 
-# 📬 Send-NtfyMessage Cmdlet Overview
+## 📬 Send-NtfyMessage Cmdlet Overview
 
 The `Send-NtfyMessage` cmdlet is the primary way to send notifications using the NtfyPwsh module. It supports a wide range of parameters to customize your notifications, including scheduling, formatting, attachments, actions, and more.
 
@@ -190,7 +190,7 @@ As of today, the following actions are supported:
 > 📖 **Further reading:** [ntfy documentation – Action Buttons](https://docs.ntfy.sh/publish/#action-buttons)
 
 
-## 🧩 Building Action Buttons with Build-NtfyAction
+## 🧩 Build-NtfyAction Cmdlet Overview
 
 You can use the `Build-NtfyAction` cmdlet to construct action button definitions for your notifications. This cmdlet helps you create properly formatted action headers for ntfy messages that require user interaction or automation. You can include up to 3 actions per notification.
 
