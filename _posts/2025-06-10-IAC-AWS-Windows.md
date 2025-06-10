@@ -106,7 +106,7 @@ aws configure
 
 ## 🏗️ Infrastructure as Code with OpenTofu
 
-[Download main.tf](assets/files/openTofu/windowsDEMO/main.tf)
+[Download main.tf](/assets/files/openTofu/windowsDEMO/main.tf)
 
 ## 🧩 Breaking Down the `main.tf`: What Each Section Does
 
@@ -218,7 +218,7 @@ cd demo
 
 2. ⏬ **Download the main.tf file:**
 
-[Download main.tf](assets/files/openTofu/windowsDEMO/main.tf)
+[Download main.tf](/assets/files/openTofu/windowsDEMO/main.tf)
 
 3. 🔨 **Initialize and apply the configuration:**
 
