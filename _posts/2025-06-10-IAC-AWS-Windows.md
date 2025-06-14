@@ -2,7 +2,7 @@
 title: Deploying Free AWS Windows EC2 with IAC
 date: 2025-06-10 04:37:30 -0500
 categories: [documentation,tutorial]
-tags: [windows,aws,iac,ec2,openTofu]
+tags: [windows,aws,iac,ec2,openTofu,ssm]
 ---
 
 # 🚀 Deploying a Free Tier Windows EC2 with Infrastructure as Code (IaC)
