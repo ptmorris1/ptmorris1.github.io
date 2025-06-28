@@ -26,15 +26,14 @@ Check out their [API docs](https://icanhazdadjoke.com/api) — it's super simple
 
 ## 🚦 Step 1: Test the API with PowerShell
 
-> [!WARNING]
-> **UserAgent is Required!**  
-> If you intend on using the icanhazdadjoke.com API, they _kindly ask_ that you set a custom `UserAgent` header for all requests.  
-> This helps them monitor usage and identify bad actors.
+> UserAgent is Required!
+> If you intend on using the icanhazdadjoke.com API, they _kindly ask_ that you set a custom `UserAgent` header for all requests.
 > 
-> *   A good User-Agent should include your project/library name and a URL or email for contact.
-> *   **Example:** `UserAgent = "(myMail.mail.com)"`
+> - A good User-Agent should include your project/library name and a URL or email for contact.
+> - **Example:** `UserAgent = "(myMail.mail.com)"`
 > 
 > **Be respectful of the site's free, no-auth access and always set a custom User-Agent!**
+{: .prompt-warning }
 
 Let’s set up our test call using **splatting** for cleaner parameters.  
 We’ll use the `Invoke-RestMethod` cmdlet.
@@ -76,8 +75,8 @@ Now just run:
 Get-DadJoke
 ```
 
-> [!NOTE]
 > I've got a joke about vegetables for you... but it's a bit corny.
+{: .prompt-info }
 
 Each time you run this, you’ll get a new random joke! 🎲
 
@@ -88,8 +87,8 @@ Each time you run this, you’ll get a new random joke! 🎲
 Maybe you want a joke for a specific occasion or topic—like, say, _scarecrows_?  
 Let's upgrade our function so you can search for any word or theme you want by using a `-Search` parameter.
 
-> [!IMPORTANT]
 > Don't forget to set a real UserAgent in every example—it's required!
+{: .prompt-danger }
 
 ```powershell
 function Get-DadJoke {
@@ -119,11 +118,11 @@ Try it out:
 Get-DadJoke -Search scarecrow
 ```
 
-> [!NOTE]
 > Why did the scarecrow win an award? Because he was outstanding in his field.
+{: .prompt-info }
 
-> [!TIP]
 > We added a `-Search` parameter, and according to the [API docs](https://icanhazdadjoke.com/api), we simply create a new URI using the string you input for custom joke searches!
+{: .prompt-tip }
 
 ## 🔊 Step 4: Suggest More Fun! (Optional)
 
@@ -165,9 +164,8 @@ Call it:
 Get-DadJoke -Audio
 ```
 
-> [!TIP]
-> **What changed in this step?**  
-> We introduced the `[switch]$Audio` parameter. Now, if you run the function with `-Audio`, PowerShell will use Windows' built-in speech engine to read your joke out loud!  
+> **What changed in this step?**
+> We introduced the `[switch]$Audio` parameter. Now, if you run the function with `-Audio`, PowerShell will use Windows' built-in speech engine to read your joke out loud!
 > The magic happens with these lines:
 > 
 > ```powershell
@@ -176,6 +174,7 @@ Get-DadJoke -Audio
 > ```
 > 
 > This creates a speech synthesizer and sends your joke to it, so you (and anyone nearby) can enjoy a random dad joke with your ears, not just your eyes!
+{: .prompt-tip }
 
 * * *
 
