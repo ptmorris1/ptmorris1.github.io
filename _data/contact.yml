@@ -4,8 +4,13 @@
   icon: "fab fa-github"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #- type: twitter
 #  icon: "fa-brands fa-x-twitter"
+=======
+- type: twitter
+  icon: "fa-brands fa-x-twitter"
+>>>>>>> v7.3.1
 =======
 - type: twitter
   icon: "fa-brands fa-x-twitter"
@@ -25,9 +30,15 @@
 #   url:  ''                  # Fill with your Mastodon account page, rel="me" will be applied for verification
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 - type: linkedin
   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
   url:  'https://www.linkedin.com/in/patrickthomasmorris/'                  # Fill with your Linkedin homepage
+=======
+# - type: linkedin
+#   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
+#   url:  ''                  # Fill with your Linkedin homepage
+>>>>>>> v7.3.1
 =======
 # - type: linkedin
 #   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>

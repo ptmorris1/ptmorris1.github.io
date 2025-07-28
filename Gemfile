@@ -3,7 +3,11 @@
 source "https://rubygems.org"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 gem "jekyll-theme-chirpy", "~> 7.2", ">= 7.2.4"
+=======
+gem "jekyll-theme-chirpy", "~> 7.3", ">= 7.3.1"
+>>>>>>> v7.3.1
 =======
 gem "jekyll-theme-chirpy", "~> 7.3", ">= 7.3.1"
 >>>>>>> v7.3.1

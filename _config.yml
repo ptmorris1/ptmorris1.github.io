@@ -10,7 +10,11 @@ lang: en
 
 # Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
 <<<<<<< HEAD
+<<<<<<< HEAD
 timezone: America/Chicago
+=======
+timezone:
+>>>>>>> v7.3.1
 =======
 timezone:
 >>>>>>> v7.3.1
@@ -18,6 +22,7 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 title: Patrick Morris # the main title
 
@@ -36,6 +41,8 @@ github:
 twitter:
   username: $NULL # change to your Twitter username
 =======
+=======
+>>>>>>> v7.3.1
 title: Chirpy # the main title
 
 tagline: A text-focused Jekyll theme # it will display as the subtitle
@@ -52,11 +59,15 @@ github:
 
 twitter:
   username: twitter_username # change to your Twitter username
+<<<<<<< HEAD
+>>>>>>> v7.3.1
+=======
 >>>>>>> v7.3.1
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
+<<<<<<< HEAD
 <<<<<<< HEAD
   name: Patrick Morris
   email: "we@Shall.see" # change to your email address
@@ -64,11 +75,16 @@ social:
     # The first element serves as the copyright owner's link
     #- https://twitter.com/username # change to your Twitter homepage
 =======
+=======
+>>>>>>> v7.3.1
   name: your_full_name
   email: example@domain.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/username # change to your Twitter homepage
+<<<<<<< HEAD
+>>>>>>> v7.3.1
+=======
 >>>>>>> v7.3.1
     - https://github.com/username # change to your GitHub homepage
     # Uncomment below to add more social links
@@ -130,7 +146,11 @@ cdn:
 
 # the avatar on sidebar, support local or CORS resources
 <<<<<<< HEAD
+<<<<<<< HEAD
 avatar: /assets/imgs/avatar.jpg
+=======
+avatar:
+>>>>>>> v7.3.1
 =======
 avatar:
 >>>>>>> v7.3.1
@@ -145,7 +165,11 @@ toc: true
 comments:
   # Global switch for the post-comment system. Keeping it empty means disabled.
 <<<<<<< HEAD
+<<<<<<< HEAD
   provider: giscus # [disqus | utterances | giscus]
+=======
+  provider: # [disqus | utterances | giscus]
+>>>>>>> v7.3.1
 =======
   provider: # [disqus | utterances | giscus]
 >>>>>>> v7.3.1
@@ -159,6 +183,7 @@ comments:
   # Giscus options › https://giscus.app
   giscus:
 <<<<<<< HEAD
+<<<<<<< HEAD
     repo: 'ptmorris1/ptmorris1.github.io' # <gh-username>/<repo>
     repo_id: 'R_kgDOOqJZEw'
     category: 'Announcements'
@@ -167,6 +192,8 @@ comments:
     strict: # optional, default to '0'
     input_position: 'top' # optional, default to 'bottom'
 =======
+=======
+>>>>>>> v7.3.1
     repo: # <gh-username>/<repo>
     repo_id:
     category:
@@ -174,6 +201,9 @@ comments:
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
+<<<<<<< HEAD
+>>>>>>> v7.3.1
+=======
 >>>>>>> v7.3.1
     lang: # optional, default to the value of `site.lang`
     reactions_enabled: # optional, default to the value of `1`
@@ -263,7 +293,11 @@ exclude:
   - LICENSE
   - purgecss.js
 <<<<<<< HEAD
+<<<<<<< HEAD
   - rollup.config.js
+=======
+  - "*.config.js"
+>>>>>>> v7.3.1
 =======
   - "*.config.js"
 >>>>>>> v7.3.1
