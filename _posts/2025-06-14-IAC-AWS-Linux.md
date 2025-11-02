@@ -5,7 +5,7 @@ categories: [documentation,tutorial]
 tags: [linux,aws,iac,ec2,openTofu,ssm]
 ---
 
-## 🐧 Spinning Up Linux EC2s with IaC 🚀
+## Spinning Up Linux EC2s with IaC 🚀
 
 Welcome back, cloud wranglers!  
 If you followed my last adventure (where we bootstrapped a Windows Server on AWS using OpenTofu), you already know the basics: **infrastructure-as-code** and that satisfying moment when your instance’s public IP pops up in the terminal.  If you don't know the basics, see here to [get started](https://ptmorris1.github.io/posts/IAC-AWS-Windows/).
@@ -14,15 +14,15 @@ But Windows isn’t the only flavor in the AWS free tier ice cream shop. **Today
 
 * * *
 
-## 📄 The Terraform File: Deja Vu, but Make It Linux
+## The Terraform File: Deja Vu, but Make It Linux
   
 👉 [**Download the main.tf file here**](/assets/files/openTofu/linuxDEMO/main.tf)
 
 * * *
 
-## 🆕 What’s New and Why?
+## What’s New and Why?
 
-### 1️⃣ Double the Linux, Double the Fun
+### Double the Linux, Double the Fun
 
 The magic is in this line:
 
@@ -30,19 +30,19 @@ The magic is in this line:
 count = 2
 ```
 
-Now you get **two** EC2 instances, each with its own public IP and Free Tier-friendly 8GB root volume. You can easily go 3 without hitting a free limit, but be careful leaving them all running for days on end or you risk being charged money💰! 
+Now you get **two** EC2 instances, each with its own public IP and Free Tier-friendly 8GB root volume. You can easily go 3 without hitting a free limit, but be careful leaving them all running for days on end or you risk being charged money! 
 
 * * *
 
-### 2️⃣ Amazon Linux 2 (AL2)
+### Amazon Linux 2 (AL2)
 
 We filter for Amazon’s official, up-to-date, x86_64 AL2 AMIs.  
 **Free, fast, and friendly** to beginners and pros alike!  
-🤓 _You could change the filter for Ubuntu if you want to experiment!_
+_You could change the filter for Ubuntu if you want to experiment!_
 
 * * *
 
-### 3️⃣ SSM Setup
+### SSM Setup
 
 Just like with Windows, SSM lets you connect to your instances **without opening SSH** (but we open SSH for learning/demo purposes).
 
@@ -50,7 +50,7 @@ Just like with Windows, SSM lets you connect to your instances **without opening
 
 * * *
 
-### 4️⃣ Key Pair Goodness
+### Key Pair Goodness
 
 Your SSH key is generated on the fly and saved wherever you specify.
 
@@ -62,7 +62,7 @@ ssh -i aws-ec2-linux-key.pem ec2-user@<public_ip>
 
 * * *
 
-## 🛡️ SSM: The Secret Passage
+## SSM: The Secret Passage
 
 With SSM, you don’t need to open port 22 if you don’t want to!  
 Here’s how to connect using the AWS CLI:
@@ -71,7 +71,7 @@ Here’s how to connect using the AWS CLI:
 aws ssm start-session --target <instance-id> --region us-east-1
 ```
 
-> 💡 **Note:**  
+>  **Note:**  
 > No public IP? No problem! SSM tunnels right through.
 
 * * *
@@ -113,7 +113,7 @@ linux_instance_table = [
 ssh -i aws-ec2-linux-key.pem ec2-user@3.82.200.42
 ```
 
-#### 🚨 Troubleshooting: SSH Key Permissions Error
+#### Troubleshooting: SSH Key Permissions Error
 
 If you see an error like this when connecting via SSH:
 
@@ -166,19 +166,19 @@ aws ssm start-session --target i-0abcd1234ef567890 --region us-east-1
 tofu destroy
 ```
 
-> 🧹 **Cleanup:** Run this when you're finished to avoid unnecessary AWS charges!
+> **Cleanup:** Run this when you're finished to avoid unnecessary AWS charges!
 
 * * *
 
-## 🎨 **Tips, Notes & Styling**
+## **Tips, Notes & Styling**
 
-*   💡 **Tip:** The default user for Amazon Linux is `ec2-user`.
-*   🔐 **Security Reminder:** For real projects, restrict your SSH security group to your IP!
-*   🏷️ **Pro Tip:** Adjust the tag format in the Terraform for easier instance management.
+*   **Tip:** The default user for Amazon Linux is `ec2-user`.
+*   **Security Reminder:** For real projects, restrict your SSH security group to your IP!
+*   **Pro Tip:** Adjust the tag format in the Terraform for easier instance management.
 
 * * *
 
-## 🏁 Wrapping Up
+## Wrapping Up
 
 With just a few lines of IaC, you’ve spun up Linux in the cloud, with remote management and SSH at your fingertips.  
 **Next up:** Stay tuned for form SSM fun using port forwarding 🌩️

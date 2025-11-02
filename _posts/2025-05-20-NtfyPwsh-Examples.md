@@ -10,7 +10,7 @@ tags: [powershell,windows,ntfy,ntfypwsh]
 
 # Full examples with explanations for the NtfyPwsh module.
 
-## 📬 Send-NtfyMessage Cmdlet Overview
+## Send-NtfyMessage Cmdlet Overview
 
 The `Send-NtfyMessage` cmdlet is the primary way to send notifications using the NtfyPwsh module. It supports a wide range of parameters to customize your notifications, including scheduling, formatting, attachments, actions, and more.
 
@@ -38,7 +38,7 @@ The `Send-NtfyMessage` cmdlet is the primary way to send notifications using the
 
 > ℹ️ For a full parameter mapping, see the [Parameter Mapping Table](#-parameter-mapping-table).
 
-## 📨 Publish a Basic Notification.
+## Publish a Basic Notification.
 
 The simplest way to send a notification is with a topic, title, and body. This will send a notification to the default public ntfy.sh server, and anyone subscribed to the topic will receive it. You can use this for quick alerts, reminders, or any message you want to broadcast.
 
@@ -51,13 +51,13 @@ $ntfy = @{
 Send-NtfyMessage @ntfy
 ```
 
-> 📖 **Further reading:** [ntfy documentation – Publishing](https://docs.ntfy.sh/publish/)
+> **Further reading:** [ntfy documentation – Publishing](https://docs.ntfy.sh/publish/)
 
 This sends a notification to the **public** "[ntfypwsh](https://ntfy.sh/ntfypwsh)" on ntfy.sh. **Anyone** subscribed to this topic will receive the notification. You can customize the `Topic`, `Body`, and `Title` as needed for your use case.
 
-> 📝 **Note**: The `-URI` parameter defaults to `https://ntfy.sh` if not specified. If you're using a self-hosted instance, be sure to provide your instance URL with the `-URI` parameter.
+> **Note**: The `-URI` parameter defaults to `https://ntfy.sh` if not specified. If you're using a self-hosted instance, be sure to provide your instance URL with the `-URI` parameter.
 
-## 📨 Sending Basic Notifications to custom URL
+##  Sending Basic Notifications to custom URL
 
 Add the URI parameter and your instance address.
 
@@ -71,7 +71,7 @@ $ntfy = @{
 Send-NtfyMessage @ntfy
 ```
 
-## 📨 Sending with message priority
+##  Sending with message priority
 
 You can set the priority of your notification using the `Priority` parameter. This controls how the notification is displayed and alerted on the recipient's device.
 
@@ -95,9 +95,9 @@ $ntfy = @{
 Send-NtfyMessage @ntfy
 ```
 
-> 📖 **Further reading:** [ntfy documentation – Message Priority](https://docs.ntfy.sh/publish/#message-priority)
+>  **Further reading:** [ntfy documentation – Message Priority](https://docs.ntfy.sh/publish/#message-priority)
 
-## 🏷️ Tags & Emojis
+##  Tags & Emojis
 
 You can add tags (including emojis) to your notifications using the `-Tags` parameter. Tags can help categorize or visually enhance your messages. Some emojis are mapped to special tag names in ntfy.
 
@@ -135,7 +135,7 @@ $ntfy = @{
 Send-NtfyMessage @ntfy
 ```
 
-## 📝 Markdown Formatting Example
+##  Markdown Formatting Example
 
 You can enable Markdown formatting in your notification body using the `-Markdown` parameter. For example:
 
@@ -149,10 +149,10 @@ $ntfy = @{
 Send-NtfyMessage @ntfy
 ```
 
-> 📖 **Further reading:** [ntfy documentation – Markdown Formatting](https://docs.ntfy.sh/publish/#markdown-formatting)
+>  **Further reading:** [ntfy documentation – Markdown Formatting](https://docs.ntfy.sh/publish/#markdown-formatting)
 
 
-## ⏰ Scheduled Delivery
+##  Scheduled Delivery
 
 Example of sending a scheduled notification:
 
@@ -171,26 +171,26 @@ $ntfy = @{
 Send-NtfyMessage @ntfy
 ```
 
-> 📖 **Further reading:** [ntfy documentation – Scheduled Delivery](https://docs.ntfy.sh/publish/#scheduled-delivery)
+>  **Further reading:** [ntfy documentation – Scheduled Delivery](https://docs.ntfy.sh/publish/#scheduled-delivery)
 > <br>🔗 **Natural language time parser:** [when on GitHub](https://github.com/olebedev/when)
 
-## 🛠️ Action Buttons
+##  Action Buttons
 
 You can add action buttons to notifications to allow yourself to react to a notification directly. This is incredibly useful and has countless applications. For example, you can control home appliances, respond to monitoring alerts, or trigger custom automations—all from your notification.
 
 As of today, the following actions are supported:
 
 - **view**: Opens a website or app when the action button is tapped.  
-  > 📖 [Further reading: Open website/app](https://docs.ntfy.sh/publish/#open-websiteapp)
+  >  [Further reading: Open website/app](https://docs.ntfy.sh/publish/#open-websiteapp)
 - **broadcast**: Sends an Android broadcast intent when the action button is tapped (only supported on Android).  
-  > 📖 [Further reading: Android broadcast](https://docs.ntfy.sh/publish/#send-android-broadcast)
+  >  [Further reading: Android broadcast](https://docs.ntfy.sh/publish/#send-android-broadcast)
 - **http**: Sends an HTTP POST/GET/PUT/DELETE request when the action button is tapped.  
-  > 📖 [Further reading: HTTP request](https://docs.ntfy.sh/publish/#send-http-request)
+  >  [Further reading: HTTP request](https://docs.ntfy.sh/publish/#send-http-request)
 
-> 📖 **Further reading:** [ntfy documentation – Action Buttons](https://docs.ntfy.sh/publish/#action-buttons)
+>  **Further reading:** [ntfy documentation – Action Buttons](https://docs.ntfy.sh/publish/#action-buttons)
 
 
-## 🧩 Build-NtfyAction Cmdlet Overview
+##  Build-NtfyAction Cmdlet Overview
 
 You can use the `Build-NtfyAction` cmdlet to construct action button definitions for your notifications. This cmdlet helps you create properly formatted action headers for ntfy messages that require user interaction or automation. You can include up to 3 actions per notification.
 
@@ -263,7 +263,7 @@ $SendBroadcast = @{
 Send-NtfyMessage @SendBroadcast
 ```
 
-## 🖱️ Click Action Example
+##  Click Action Example
 
 You can use the `-OnClick` parameter to specify a URL to open when the notification is clicked. For example, to open Reddit messages when the notification is clicked:
 
@@ -276,9 +276,9 @@ $ntfy = @{
 Send-NtfyMessage @ntfy
 ```
 
-> 📖 **Further reading:** [ntfy documentation – Click Action](https://docs.ntfy.sh/publish/#click-action)
+>  **Further reading:** [ntfy documentation – Click Action](https://docs.ntfy.sh/publish/#click-action)
 
-## 📎 Local File Attachment Example
+##  Local File Attachment Example
 
 You can attach a local file to your notification using the `-AttachmentPath` parameter. For example:
 
@@ -293,9 +293,9 @@ $ntfy = @{
 Send-NtfyMessage @ntfy
 ```
 
-> 📖 **Further reading:** [ntfy documentation – Attach Local File](https://docs.ntfy.sh/publish/#attach-local-file)
+>  **Further reading:** [ntfy documentation – Attach Local File](https://docs.ntfy.sh/publish/#attach-local-file)
 
-## 🌐 Attachment from URL Example
+##  Attachment from URL Example
 
 You can attach a file from a URL to your notification using the `-AttachmentURL` parameter. For example:
 
@@ -309,9 +309,9 @@ $ntfy = @{
 Send-NtfyMessage @ntfy
 ```
 
-> 📖 **Further reading:** [ntfy documentation – Attach File from a URL](https://docs.ntfy.sh/publish/#attach-file-from-a-url)
+>  **Further reading:** [ntfy documentation – Attach File from a URL](https://docs.ntfy.sh/publish/#attach-file-from-a-url)
 
-## 🖼️ Icon Example (Android only)
+##  Icon Example (Android only)
 
 You can specify an icon for your notification using the `-Icon` parameter. The icon can be a URL to a PNG/JPEG image or an emoji (`Android only`). For example:
 
@@ -325,9 +325,9 @@ $ntfy = @{
 Send-NtfyMessage @ntfy
 ```
 
-> 📖 **Further reading:** [ntfy documentation – Icons](https://docs.ntfy.sh/publish/#icons)
+>  **Further reading:** [ntfy documentation – Icons](https://docs.ntfy.sh/publish/#icons)
 
-## 📧 Email Notification Example
+##  Email Notification Example
 
 You can send a notification to an email address using the `-Email` parameter. For example:
 
@@ -341,7 +341,7 @@ $ntfy = @{
 Send-NtfyMessage @ntfy
 ```
 
-> 📖 **Further reading:** [ntfy documentation – E-mail Notifications](https://docs.ntfy.sh/publish/#e-mail-notifications)
+>  **Further reading:** [ntfy documentation – E-mail Notifications](https://docs.ntfy.sh/publish/#e-mail-notifications)
 
 ## 📞 Phone Call Example
 
@@ -357,9 +357,9 @@ $ntfy = @{
 Send-NtfyMessage @ntfy
 ```
 
-> 📖 **Further reading:** [ntfy documentation – Phone Calls](https://docs.ntfy.sh/publish/#phone-calls)
+>  **Further reading:** [ntfy documentation – Phone Calls](https://docs.ntfy.sh/publish/#phone-calls)
 
-## 🚫 No-Cache Example
+##  No-Cache Example
 
 You can prevent a message from being cached on the server using the `-NoCache` parameter. For example:
 
@@ -373,9 +373,9 @@ $ntfy = @{
 Send-NtfyMessage @ntfy
 ```
 
-> 📖 **Further reading:** [ntfy documentation – Message Caching](https://docs.ntfy.sh/publish/#message-caching)
+>  **Further reading:** [ntfy documentation – Message Caching](https://docs.ntfy.sh/publish/#message-caching)
 
-## 📵 Disable Firebase Forwarding Example
+##  Disable Firebase Forwarding Example
 
 You can prevent a message from being forwarded (if configured) to Firebase (FCM) using the `-FirebaseNo` parameter. For example:
 
@@ -389,9 +389,9 @@ $ntfy = @{
 Send-NtfyMessage @ntfy
 ```
 
-> 📖 **Further reading:** [ntfy documentation – Disable Firebase](https://docs.ntfy.sh/publish/#disable-firebase)
+>  **Further reading:** [ntfy documentation – Disable Firebase](https://docs.ntfy.sh/publish/#disable-firebase)
 
-## 🔐 Authentication Examples
+##  Authentication Examples
 
 You can authenticate with ntfy using either basic authentication (username and password) or an API token. For more details, see the [ntfy documentation – Authentication](https://docs.ntfy.sh/publish/#authentication).
 
@@ -421,7 +421,7 @@ $ntfy = @{
 Send-NtfyMessage @ntfy
 ```
 
-## 📑 Parameter Mapping Table
+##  Parameter Mapping Table
 
 Below is a mapping of ntfy headers/parameters to the corresponding PowerShell parameters in Send-NtfyMessage:
 

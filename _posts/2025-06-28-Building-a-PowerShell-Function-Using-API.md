@@ -6,7 +6,7 @@ tags: [powershell,windows,api,DadJokes]
 ---
 Let's have a little fun while learning, and create a PowerShell function that gets Dad jokes!  
 We'll work through using a public API, then make a reusable function, and finally give it some cool upgrades.  
-Ready? Let's go! 🚀
+Ready? Let's go!
 
 * * *
 
@@ -16,7 +16,7 @@ Ready? Let's go! 🚀
 
 * * *
 
-## 🕸️ Using the Dad Joke API
+## Using the Dad Joke API
 
 We'll use the free [icanhazdadjoke.com](https://icanhazdadjoke.com) API.  
 Check out their [API docs](https://icanhazdadjoke.com/api) — it's super simple:  
@@ -24,7 +24,7 @@ Check out their [API docs](https://icanhazdadjoke.com/api) — it's super simple
 
 * * *
 
-## 🚦 Step 1: Test the API with PowerShell
+## Step 1: Test the API with PowerShell
 
 > UserAgent is Required!
 > If you intend on using the icanhazdadjoke.com API, they _kindly ask_ that you set a custom `UserAgent` header for all requests.
@@ -53,7 +53,7 @@ You should see a classic Dad joke, like:
 
 * * *
 
-## 🧰 Step 2: Make it Reusable – Wrap It in a Function!
+## Step 2: Make it Reusable – Wrap It in a Function!
 
 Let's make this a function so you can call it anytime.
 
@@ -82,7 +82,7 @@ Each time you run this, you’ll get a new random joke! 🎲
 
 * * *
 
-## 🔍 Step 3: Add Search Capability
+## Step 3: Add Search Capability
 
 Maybe you want a joke for a specific occasion or topic—like, say, _scarecrows_?  
 Let's upgrade our function so you can search for any word or theme you want by using a `-Search` parameter.
@@ -124,7 +124,7 @@ Get-DadJoke -Search scarecrow
 > We added a `-Search` parameter, and according to the [API docs](https://icanhazdadjoke.com/api), we simply create a new URI using the string you input for custom joke searches!
 {: .prompt-tip }
 
-## 🔊 Step 4: Suggest More Fun! (Optional)
+## Step 4: Suggest More Fun! (Optional)
 
 Wouldn't it be even more fun if PowerShell could **read the joke aloud**?  
 We will add a switch called `-Audio` to do just that!  
@@ -178,7 +178,7 @@ Get-DadJoke -Audio
 
 * * *
 
-## 🎛️ Step 5: Level Up Further (Optional)
+## Step 5: Level Up Further (Optional)
 
 Want to go wild?  
 How about customizing the voice, speed, and volume? (Because why not? 😎)
@@ -237,10 +237,10 @@ Get-DadJoke -Audio -VoiceIndex 1 -Rate 2 -Volume 80
 
 * * *
 
-## 🎉 That's a Wrap!
+## That's a Wrap!
 
 Congratulations, you've built a **fully loaded, over-engineered** Dad Joke function in PowerShell!  
 Share it with friends, or better yet, add your own twists.  
-Happy scripting! 😄
+Happy scripting!
 
 * * *

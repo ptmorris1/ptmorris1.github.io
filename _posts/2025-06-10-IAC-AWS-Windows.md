@@ -5,13 +5,13 @@ categories: [documentation,tutorial]
 tags: [windows,aws,iac,ec2,openTofu,ssm]
 ---
 
-# 🚀 Deploying a Free Tier Windows EC2 with Infrastructure as Code (IaC)
+# Deploying a Free Tier Windows EC2 with Infrastructure as Code (IaC)
 
 Are you interested in deploying a Windows Server EC2 instance on AWS for free, using Infrastructure as Code from your Windows workstation? This guide walks you through setting up a free tier-eligible Windows EC2 instance, with the option to enable AWS Systems Manager (SSM) for secure remote management. Follow along for a practical, step-by-step approach to automating your cloud infrastructure.
 
 ---
 
-## 📔 A Note on AWS Tools: AWS CLI vs PowerShell Module
+## A Note on AWS Tools: AWS CLI vs PowerShell Module
 
 While I personally prefer and love working with PowerShell for most automation tasks, I've found that the AWS PowerShell modules have some limitations when it comes to the specific operations needed for this guide. The AWS CLI tools are currently more feature-complete and better documented for these particular workflows.
 
@@ -23,7 +23,7 @@ For this guide, we'll stick with the AWS CLI to ensure the most reliable experie
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 - **AWS account** (free tier works great!)
 - **Windows** (any modern version should be fine)
@@ -32,7 +32,7 @@ For this guide, we'll stick with the AWS CLI to ensure the most reliable experie
 
 ---
 
-## 🔑 How to Get Your AWS Access Keys
+## How to Get Your AWS Access Keys
 
 > 📌 **Note:** The AWS Console changes frequently, so these exact instructions may vary slightly over time.
 
@@ -91,7 +91,7 @@ Instead, log in as the root user only to create an appropriate IAM user and assi
 
 ---
 
-## ⚙️ Configure AWS Credentials
+## Configure AWS Credentials
 
 ```powershell
 aws configure
@@ -104,17 +104,17 @@ aws configure
 
 ---
 
-## 🏗️ Infrastructure as Code with OpenTofu
+## Infrastructure as Code with OpenTofu
 
 [Download main.tf](/assets/files/openTofu/windowsDEMO/main.tf)
 
-## 🧩 Breaking Down the `main.tf`: What Each Section Does
+## Breaking Down the `main.tf`: What Each Section Does
 
 Curious what all those blocks in your `main.tf` actually do? Here’s a quick tour of each section, so you know exactly what’s happening when you deploy your Windows EC2 instance with SSM using OpenTofu!
 
 ---
 
-### 1️⃣ Provider and Required Providers
+### Provider and Required Providers
 ```hcl
 terraform {
   required_providers {
@@ -141,7 +141,7 @@ This block sets up the AWS, TLS, and Local providers, and specifies the AWS regi
 
 ---
 
-### 🔑 SSH Key Pair Generation
+### SSH Key Pair Generation
 ```hcl
 variable "ssh_key_path" { ... }
 resource "tls_private_key" "ec2" { ... }
@@ -152,7 +152,7 @@ This section generates a new SSH key pair for EC2 access, saves the private key 
 
 ---
 
-### 🌐 VPC and Subnet Data Sources
+### VPC and Subnet Data Sources
 ```hcl
 data "aws_vpc" "default" { ... }
 data "aws_subnets" "default" { ... }
@@ -161,7 +161,7 @@ These data sources automatically find your default VPC and its subnets, ensuring
 
 ---
 
-### 🛡️ IAM Role, Policy Attachment, and Instance Profile for SSM
+### IAM Role, Policy Attachment, and Instance Profile for SSM
 ```hcl
 resource "aws_iam_role" "ssm_role" { ... }
 resource "aws_iam_role_policy_attachment" "ssm_attach" { ... }
@@ -171,7 +171,7 @@ This creates an IAM role and instance profile that allow the EC2 instance to use
 
 ---
 
-### 🔒 Security Group for RDP and SSM
+### Security Group for RDP and SSM
 ```hcl
 resource "aws_security_group" "win_sg" { ... }
 ```
@@ -179,7 +179,7 @@ Defines a security group that allows inbound RDP (port 3389) and all outbound tr
 
 ---
 
-### 🪟 Windows AMI Data Source
+### Windows AMI Data Source
 ```hcl
 data "aws_ami" "windows" { ... }
 ```
@@ -187,7 +187,7 @@ Finds the latest official Windows Server 2022 AMI from Amazon.
 
 ---
 
-### 💻 EC2 Instance Resource
+### EC2 Instance Resource
 ```hcl
 resource "aws_instance" "win_ec2" { ... }
 ```
@@ -195,7 +195,7 @@ Launches a Windows EC2 instance using the latest Windows AMI, free tier-eligible
 
 ---
 
-### 📦 Outputs
+### Outputs
 ```hcl
 output "windows_instance_public_ip" { ... }
 output "key_pair_name" { ... }
@@ -205,7 +205,7 @@ These outputs provide the public IP of the instance, the key pair name, and the 
 
 ---
 
-## 🚦 Getting Started: Set Up and Launch Your Project
+## Getting Started: Set Up and Launch Your Project
 
 With your `main.tf` file explained, here’s how to get your environment ready and deploy your Windows EC2 instance using OpenTofu:
 
@@ -231,11 +231,11 @@ Make sure there are no errors, then type `yes` to confirm resource creation.
 
 ---
 
-## 🖥️ Managing EC2
+##  Managing EC2
 
 After your instance is running, you can manage and connect using AWS CLI:
 
-### 🔍 Get the Instance ID and DNS
+###  Get the Instance ID and DNS
 
 ```powershell
 # Get the instance ID (replace "demo" with your tag value if different)
@@ -253,7 +253,7 @@ aws ec2 describe-instances `
 
 These commands will print the instance ID and public DNS for your Windows EC2 instance.
 
-### 🔐 Get Windows Administrator Password
+###  Get Windows Administrator Password
 
 
 ```powershell
@@ -263,7 +263,7 @@ aws ec2 get-password-data --instance-id i-xxxxxxxxxxxxxxxxx --priv-launch-key C:
 
 ---
 
-## 🎮 Time to Play!
+## Time to Play!
 
 Now that you have your Windows EC2 instance up and running, it's time to have some fun with it!
 
@@ -276,7 +276,7 @@ Don't be afraid to experiment! This is a sandbox environment perfect for learnin
 
 ---
 
-## 🧹 Cleanup
+## Cleanup
 
 When done, destroy your resources to avoid charges. This will undo everything we created with OpenTofu, but not the manual things we did in the AWS console.
 
@@ -286,11 +286,7 @@ tofu destroy
 
 ---
 
-## 💭 Final Thoughts
+## Final Thoughts
 
 - **OpenTofu** is a drop-in, open-source replacement for Terraform. Everything you learn here applies to Terraform!
 - **Next steps?** Stay tuned for connecting to RDP using SSM!
-
----
-
-**Happy automating!** 🚀
